@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="favContainer">
+    <div class="yoursContainer">
+      <h2>Your pokemon :</h2>
+      <ul>
+        <li *ngFor="let pokemon of myPokemonList">
+          <div class="listItem">
+            {{ pokemon.name }}
+            <img [src]="pokemon.img" alt="" />
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="catchedContainer">
+      <h2>Catched pokemon :</h2>
+      <ul>
+        <li *ngFor="let fav of favPokemonList">
+          <div class="listItem">
+            {{ fav.name }}
+            <img [src]="fav.img" alt="" />
+          </div>
+        </li>
+      </ul>
+      <button (click)="saveFavPokemon()">Catch those pokemon</button>
+    </div>
+  </div>
+  <h2>Wild pokemon :</h2>
+  <div class="inputContainer">
+    <span>Find a pokemon :</span>
+    <input (keyup)="searchPokemon($event)" />
+  </div>
+  <div *ngIf="pokemonList" class="cardContainer">
+    <app-poke-card
+      *ngFor="let pokemon of pokemonList"
+      [pokemonUrl]="pokemon.url"
+      (savePokemon)="savePokemon($event)"
+    ></app-poke-card>
+  </div>
+</div>

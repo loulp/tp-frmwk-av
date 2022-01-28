@@ -1,0 +1,42 @@
+@import url("../../style/button.scss");
+
+.container {
+  margin-top: 8%;
+
+  .favContainer {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+
+    .listItem {
+      display: flex;
+      flex-direction: row;
+
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 30px;
+      }
+    }
+  }
+
+  .cardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    > * {
+      flex: 25%;
+      margin: 2%;
+    }
+  }
+
+  .inputContainer {
+    input {
+      margin: auto 3%;
+    }
+  }
+}
